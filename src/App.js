@@ -1,7 +1,7 @@
 import React,{useEffect} from 'react';
 import { useDispatch } from 'react-redux';
 import { fetchPosts } from './reduxStore/posts/actions/fetch_posts';
-// import PostsList from './PostsList';
+import PostsList from './PostsList';
 
 import './App.css';
 import Acres from "./appclone/99acres";
@@ -13,9 +13,8 @@ function App() {
   },[])
   return (
     <div className="App ">
-      {/* <PostsList/> */}
       <Acres />
-      
+      <PostsList/>
     </div>
   );
 }

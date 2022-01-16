@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux"
-import { getAllPosts, getIsFetchingPosts, getErrorPosts } from "./reduxStore/posts/reducers/postsReducer";
-const PostsList = () => {
+import { getAllPosts, getIsFetchingPosts, getErrorPosts } from "./reduxStore/posts/reducers/propertysReducer";
+const PropertysList = () => {
     const posts = useSelector(getAllPosts)
     const isFetching = useSelector(getIsFetchingPosts)
 
@@ -17,9 +17,10 @@ const PostsList = () => {
                 return (
                     <div key={post._id}>
 
-                        <h4>{post.name}</h4>
-                        <h6>{post.createdAt}</h6>
-                        <p>{post.updatedAt}</p>
+                        <h4>{post.title}</h4>
+                        <h6>{post.description}</h6>
+                        <p>{post.price}</p>
+                        <p>{post.propertyImage}</p>
                     </div>
                 )
 
@@ -29,4 +30,4 @@ const PostsList = () => {
         </div>
     )
 }
-export default PostsList;
+export default PropertysList;
