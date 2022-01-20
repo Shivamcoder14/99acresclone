@@ -1,6 +1,6 @@
 import React from "react";
 import Navlogo from "../img/navlogo.png";
-
+import { Link } from "react-router-dom";
 
 const Navbar =()=>{
     return(
@@ -10,11 +10,11 @@ const Navbar =()=>{
                     <img src={Navlogo} alt="img"/>
                 </div>
                 <div className="Nav-right">
-                <a className="nav-btn" href="/"> For Buyers</a>
-                    <a className="nav-btn"href="/">For Tenants</a>
-                    <a className="nav-btn" href="/">For Owners</a>
-                    <a className="nav-btn" href="/">For Dealers/Builders</a>
-                    <a className="nav-btn" href="https://fswi-99acres-clone.herokuapp.com/properties">Post Property</a>
+                <Link className="nav-btn" to="/"> For Buyers</Link>
+                    <Link className="nav-btn"to="/">For Tenants</Link>
+                    <Link className="nav-btn" to="/">For Owners</Link>
+                    <Link className="nav-btn" to="/cities">Post City</Link>
+                    <Link className="nav-btn" to="/properties">Post Property</Link>
                 </div>
             </div>
         </>

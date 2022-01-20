@@ -1,0 +1,51 @@
+#roots-city{
+    margin-top: 80px;
+    
+}
+.ccmain{
+    display: flex;
+    flex-direction: row;
+}
+.cc-main-left{
+/* border:1px solid black; */
+padding: 20px;
+width: 50vw;
+}
+.cc-post{
+    padding: 10px;
+    width: 45vw;
+    border:1px solid rgb(241, 230, 230);
+}
+
+.cc-post-items{
+    padding: 10px;
+}
+.cc-btn{
+    background-color: rgb(27, 27, 163);
+    border-radius: 5px;
+    padding: 10px;
+    text-decoration: none;
+    border-style: none;
+}
+.cc-btn:hover{
+    background-color: blue;
+}
+.cc-show-btn{
+    background-color: rgb(20, 139, 36);
+    border-radius: 5px;
+    padding: 10px;
+    text-decoration: none;
+    border-style: none;
+}
+.show-btn:hover{
+    background-color: green;
+}
+.citydata{
+    /* border:1px solid red; */
+    background-color: cadetblue;
+    border-radius: 15px;
+        padding: 10px;
+    margin: 20px;
+}
+
+

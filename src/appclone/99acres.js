@@ -9,7 +9,7 @@ const Acres = () => {
 
     return (
         <div>
-            <Navbar />
+            {/* <Navbar/> */}
             <Searchbar />
             <MainBox />
             <Main1 />
