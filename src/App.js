@@ -10,6 +10,7 @@ import Home from './routes/Home';
 import PostProperty from './routes/PostProperty';
 import Navbar from './appclone/navbar';
 import PostCity from './routes/PostCity';
+import NotFound from './routes/NotFound';
 
 function App() {
   // const dispatch = useDispatch()
@@ -27,7 +28,7 @@ function App() {
           <Route path="/properties/:id" element={<PostProperty/>}/>
           <Route path="/cities" element={<PostCity/>}/>
           <Route path="/cities/:id" element={<PostCity/>}/>
-
+          <Route path="*" element={<NotFound/>}/>
 
         </Routes>
       </Router>

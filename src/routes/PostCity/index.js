@@ -7,7 +7,7 @@ import axios from "axios";
 
 const PostCity = () => {
 
-    // let {id}=useParams();
+    let {id}=useParams();
 
     const [data, setData] = useState({
         name: "",
@@ -53,28 +53,48 @@ const PostCity = () => {
         getAllTypes();
     }, []);
     const getAllTypes = () => {
-        axios.get('https://fswi-99acres-clone.herokuapp.com/cities/')
+        axios.get('https://fswi-99acres-clone.herokuapp.com/cities')
             .then((res) => {
                 console.log(res.data)
                 setPost(res.data);
 
             })
             .catch(error => console.error("Error"));
+
+            axios.get(`https://fswi-99acres-clone.herokuapp.com/cities/${id}`)
+            .then((res) => {
+                console.log(res.data)
+                // setPost(res.data);
+
+            })
+            .catch(error => console.error("Error"));
+            
+
     }
 
     // Axios DELETE Request 
     
-    const cityDelete=(id,e)=>{
+    const cityDelete=(iid,e)=>{
+        e.preventDefault();
+        // alert(id)
+        axios.delete(`https://fswi-99acres-clone.herokuapp.coms/cities/${iid}`,{...data,name:""})
+        .then((res)=>{
+            console.log("City Deleted",res)
+        })
+        .catch(error=>console.log("Error",error))
+    }
+
+    // Axios UPDATE Request 
+
+    const cityUpdate=(id,e)=>{
         e.preventDefault();
 
-        axios.delete(`https://fswi-99acres-clone.herokuapp.com/cities/${id}`)
+        axios.put(`https://fswi-99acres-clone.herokuapp.com/cities/${id}`,{...data,name:"Ranchi"})
         .then((res)=>{
-            console.log("City Deleted")
+            console.log("City Updated",res)
         })
         .catch(error=>console.log("Error"))
     }
-
-
 
     // DISPLAY Request 
 
@@ -84,10 +104,13 @@ const PostCity = () => {
             post.map((post) => {
                 return (
                     <div className="citydata" key={post.id}>
+                        <h3>{post._id}</h3>
                         <h3>{post.name}</h3>
                         <h3>{post.createdAt}</h3>
                         <h3>{post.updatedAt}</h3>
-                        <button onClick={(e)=>cityDelete(post.id,e)}>Delete</button>
+                        {/* <button onClick={(e)=>cityDelete(post._id,e)}>Delete</button> */}
+                        <button onClick={(e)=>cityUpdate(post._id,e)}>Update</button>
+
                     </div>
                 );
             })

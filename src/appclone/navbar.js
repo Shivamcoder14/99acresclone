@@ -10,8 +10,8 @@ const Navbar =()=>{
                     <img src={Navlogo} alt="img"/>
                 </div>
                 <div className="Nav-right">
-                <Link className="nav-btn" to="/"> For Buyers</Link>
-                    <Link className="nav-btn"to="/">For Tenants</Link>
+                <Link className="nav-btn" to="/"> Home</Link>
+                    <Link className="nav-btn"to="/">For Buyers</Link>
                     <Link className="nav-btn" to="/">For Owners</Link>
                     <Link className="nav-btn" to="/cities">Post City</Link>
                     <Link className="nav-btn" to="/properties">Post Property</Link>
